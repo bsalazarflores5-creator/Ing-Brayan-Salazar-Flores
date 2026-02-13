@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ing. Brayan Salazar Flores | Ingeniería Civil</title>
+
+<title>Ing. Brayan Salazar Flores | Ingeniería Civil & Proyectos</title>
+
+<meta name="description" content="Ingeniero Civil especializado en diseño estructural, diseño hidráulico, infraestructura vial, expedientes técnicos y Seguridad y Salud en el Trabajo.">
+<meta name="keywords" content="Ingeniero Civil, Diseño Estructural, Diseño Hidráulico, Infraestructura Vial, Seguridad y Salud en el Trabajo, Supervisión de Obras">
+<meta name="author" content="Ing. Brayan Salazar Flores">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
@@ -28,26 +33,25 @@ nav{
     justify-content:space-between;
     align-items:center;
     padding:20px 80px;
-    z-index:1000;
     transition:0.4s;
+    z-index:1000;
 }
 
 nav.scrolled{
     background:#0b1c2d;
-    padding:15px 80px;
 }
 
 .logo{
-    color:#fff;
-    font-weight:600;
+    color:white;
     font-size:14px;
+    font-weight:600;
     letter-spacing:1px;
 }
 
 nav ul{
     list-style:none;
     display:flex;
-    gap:35px;
+    gap:30px;
 }
 
 nav ul li a{
@@ -74,26 +78,15 @@ header{
     color:white;
 }
 
-.hero-content small{
-    letter-spacing:2px;
-    opacity:0.8;
-}
-
-.hero-content h1{
+.hero h1{
     font-family:'Playfair Display', serif;
     font-size:60px;
     margin:20px 0;
-    position:relative;
 }
 
-.hero-content h1::after{
-    content:"";
-    width:80px;
-    height:4px;
-    background:#f4b400;
-    position:absolute;
-    bottom:-10px;
-    left:0;
+.hero p{
+    font-size:18px;
+    opacity:0.9;
 }
 
 .btn{
@@ -103,15 +96,13 @@ header{
     background:#f4b400;
     color:white;
     text-decoration:none;
-    font-weight:600;
     border-radius:8px;
+    font-weight:600;
     transition:0.3s;
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
 
 .btn:hover{
     background:#d89c00;
-    transform:translateY(-3px);
 }
 
 /* SECCIONES */
@@ -121,28 +112,28 @@ section{
 
 .section-title{
     text-align:center;
-    font-size:32px;
+    font-size:34px;
     margin-bottom:60px;
     font-weight:700;
     color:#0b1c2d;
 }
 
-/* EMPRESA */
-.about{
+/* PERFIL */
+.profile{
     display:flex;
-    gap:50px;
+    gap:60px;
     align-items:center;
 }
 
-.about img{
-    width:450px;
-    border-radius:10px;
+.profile img{
+    width:380px;
+    border-radius:12px;
     box-shadow:0 15px 30px rgba(0,0,0,0.2);
 }
 
-.about-text p{
+.profile-text p{
     margin-bottom:20px;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 /* SERVICIOS */
@@ -165,43 +156,12 @@ section{
 }
 
 .service-card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-8px);
 }
 
 .service-card h3{
     margin-bottom:15px;
     color:#0b1c2d;
-}
-
-/* PROYECTOS */
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.project-card{
-    height:250px;
-    background:#ccc;
-    border-radius:10px;
-    overflow:hidden;
-    position:relative;
-}
-
-.project-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.project-card span{
-    position:absolute;
-    bottom:15px;
-    left:15px;
-    background:rgba(0,0,0,0.7);
-    color:white;
-    padding:8px 15px;
-    border-radius:5px;
 }
 
 /* CTA */
@@ -212,20 +172,14 @@ section{
     padding:80px 20px;
 }
 
-.cta h2{
-    margin-bottom:20px;
-}
-
-/* FOOTER */
 footer{
     background:#091520;
     color:#ccc;
     text-align:center;
     padding:25px;
-    font-size:14px;
 }
 
-/* WHATSAPP FLOAT */
+/* WHATSAPP */
 .whatsapp{
     position:fixed;
     bottom:25px;
@@ -236,32 +190,19 @@ footer{
     border-radius:50%;
     font-size:22px;
     text-decoration:none;
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-    nav{
+    nav, header, section{
         padding:20px;
     }
 
-    header{
-        padding:0 20px;
-    }
-
-    section{
-        padding:80px 20px;
-    }
-
-    .about{
+    .profile{
         flex-direction:column;
     }
 
-    .about img{
-        width:100%;
-    }
-
-    .hero-content h1{
+    .hero h1{
         font-size:40px;
     }
 }
@@ -271,85 +212,84 @@ footer{
 <body>
 
 <nav id="navbar">
-    <div class="logo">Empresa de Ingeniería & Proyectos Civiles</div>
+    <div class="logo">Ingeniería Civil & Proyectos</div>
     <ul>
-        <li><a href="#empresa">Empresa</a></li>
+        <li><a href="#perfil">Perfil Profesional</a></li>
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#contacto">Contacto</a></li>
     </ul>
 </nav>
 
 <header>
-    <div class="hero-content">
-        <small>Soluciones Técnicas Profesionales</small>
+    <div class="hero">
         <h1>Ing. Brayan Salazar Flores</h1>
-        <a class="btn" href="https://wa.me/51925155313" target="_blank">
+        <p>Soluciones integrales en diseño, ejecución y supervisión de proyectos de infraestructura.</p>
+        <a class="btn" href="https://wa.me/51925155313?text=Hola%20Ingeniero,%20deseo%20solicitar%20una%20cotización." target="_blank">
             Solicitar Cotización
         </a>
     </div>
 </header>
 
-<section id="empresa">
-    <h2 class="section-title">Nuestra Empresa</h2>
-    <div class="about">
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="">
-        <div class="about-text">
-            <p>Somos una empresa especializada en proyectos de ingeniería civil, supervisión, ejecución de obras y consultoría técnica.</p>
-            <p>Brindamos soluciones eficientes, seguras y alineadas a normativas vigentes, garantizando calidad y cumplimiento en cada proyecto.</p>
+<section id="perfil">
+    <h2 class="section-title">Ing. Brayan Salazar Flores</h2>
+    <div class="profile">
+        <img src="https://raw.githubusercontent.com/bsalazarflores5-creator/Ing-Brayan-Salazar-Flores/main/ing_salazar.jpeg" alt="Ing. Brayan Salazar Flores">
+        <div class="profile-text">
+            <p>Ingeniero Civil con experiencia en diseño estructural, hidráulico e infraestructura vial, especializado en la planificación, supervisión y ejecución de proyectos civiles bajo estándares técnicos y normativos vigentes.</p>
+
+            <p>Amplio dominio en elaboración de expedientes técnicos, metrados, presupuestos, control de calidad y gestión de obra. Experiencia en implementación de Seguridad y Salud en el Trabajo (SST), IPERC, control de riesgos y supervisión preventiva en obras civiles.</p>
+
+            <p>Enfoque profesional orientado a eficiencia técnica, optimización de recursos y cumplimiento de estándares de seguridad y calidad en cada proyecto.</p>
         </div>
     </div>
 </section>
 
 <section id="servicios" class="services">
-    <h2 class="section-title">Servicios</h2>
+    <h2 class="section-title">Servicios Profesionales</h2>
     <div class="service-grid">
+
         <div class="service-card">
             <h3>Diseño Estructural</h3>
-            <p>Cálculo y modelamiento estructural bajo normativa vigente.</p>
+            <p>Modelamiento y cálculo estructural conforme a normativa vigente.</p>
         </div>
+
         <div class="service-card">
-            <h3>Supervisión de Obras</h3>
-            <p>Control técnico y seguimiento de proyectos civiles.</p>
+            <h3>Diseño Hidráulico</h3>
+            <p>Sistemas hidráulicos, drenajes y ejecución de canales.</p>
         </div>
+
+        <div class="service-card">
+            <h3>Infraestructura Vial</h3>
+            <p>Planificación y supervisión de proyectos viales y pavimentación.</p>
+        </div>
+
         <div class="service-card">
             <h3>Expedientes Técnicos</h3>
-            <p>Elaboración integral de documentación técnica.</p>
+            <p>Desarrollo integral de documentación técnica y presupuestos.</p>
         </div>
-        <div class="service-card">
-            <h3>Consultoría</h3>
-            <p>Asesoría especializada en proyectos de infraestructura.</p>
-        </div>
-    </div>
-</section>
 
-<section id="proyectos">
-    <h2 class="section-title">Proyectos</h2>
-    <div class="project-grid">
-        <div class="project-card">
-            <img src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b" alt="">
-            <span>Edificación Residencial</span>
+        <div class="service-card">
+            <h3>Supervisión de Obras</h3>
+            <p>Control técnico, calidad y cumplimiento normativo.</p>
         </div>
-        <div class="project-card">
-            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" alt="">
-            <span>Infraestructura Urbana</span>
+
+        <div class="service-card">
+            <h3>Seguridad y Salud en el Trabajo</h3>
+            <p>Planes SST, IPERC, prevención de riesgos y supervisión en campo.</p>
         </div>
-        <div class="project-card">
-            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" alt="">
-            <span>Supervisión Técnica</span>
-        </div>
+
     </div>
 </section>
 
 <section class="cta" id="contacto">
-    <h2>¿Necesitas asesoría profesional?</h2>
-    <a class="btn" href="https://wa.me/51925155313" target="_blank">
-        Contáctanos por WhatsApp
+    <h2>Solicita asesoría profesional especializada</h2>
+    <a class="btn" href="https://wa.me/51925155313?text=Hola%20Ingeniero,%20me%20interesa%20recibir%20información%20sobre%20sus%20servicios." target="_blank">
+        Contactar por WhatsApp
     </a>
 </section>
 
 <footer>
-    © 2026 Ing. Brayan Salazar Flores | Todos los derechos reservados
+    © 2026 Ing. Brayan Salazar Flores | Ingeniería Civil & Proyectos
 </footer>
 
 <a class="whatsapp" href="https://wa.me/51925155313" target="_blank">💬</a>
