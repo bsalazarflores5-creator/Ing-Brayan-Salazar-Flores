@@ -3,49 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ing. Brayan Salazar Flores | Ingeniería Civil & Proyectos</title>
-
-<meta name="description" content="Ingeniero Civil especializado en diseño estructural, diseño hidráulico, infraestructura vial, expedientes técnicos y Seguridad y Salud en el Trabajo.">
-<meta name="keywords" content="Ingeniero Civil, Diseño Estructural, Diseño Hidráulico, Infraestructura Vial, Seguridad y Salud en el Trabajo, Supervisión de Obras">
-<meta name="author" content="Ing. Brayan Salazar Flores">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<title>Ing. Brayan Salazar Flores</title>
 
 <style>
+
+/* ===== RESET ===== */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
+    font-family:'Segoe UI',sans-serif;
 }
 
-body{
-    font-family:'Poppins', sans-serif;
-    color:#333;
-}
-
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 nav{
     position:fixed;
     width:100%;
+    top:0;
+    background:#0f1c2e;
+    padding:20px 10%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 80px;
-    transition:0.4s;
     z-index:1000;
 }
 
-nav.scrolled{
-    background:#0b1c2d;
-}
-
-.logo{
-    color:white;
-    font-size:14px;
-    font-weight:600;
-    letter-spacing:1px;
+nav h1{
+    color:#fff;
+    font-size:1.1rem;
+    font-weight:500;
 }
 
 nav ul{
@@ -55,280 +41,272 @@ nav ul{
 }
 
 nav ul li a{
+    color:#fff;
     text-decoration:none;
-    color:white;
     font-weight:500;
     transition:0.3s;
 }
 
 nav ul li a:hover{
-    color:#f4b400;
+    color:#ffb400;
 }
 
-/* HERO */
-header{
-    background: linear-gradient(rgba(0,20,40,0.75), rgba(0,20,40,0.85)),
-    url('https://raw.githubusercontent.com/bsalazarflores5-creator/Ing-Brayan-Salazar-Flores/main/foto_fondo.png');
-    background-size:cover;
-    background-position:center;
+/* ===== HERO ===== */
+.hero{
     height:100vh;
+    background:url("https://raw.githubusercontent.com/bsalazarflores5-creator/Ing-Brayan-Salazar-Flores/main/foto_fondo.png") center/cover no-repeat;
     display:flex;
     align-items:center;
-    padding:0 80px;
-    color:white;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    position:relative;
 }
 
-.hero h1{
-    font-family:'Playfair Display', serif;
-    font-size:60px;
-    margin:20px 0;
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h2{
+    font-size:3rem;
+    margin-bottom:20px;
 }
 
 .hero p{
-    font-size:18px;
-    opacity:0.9;
+    font-size:1.2rem;
+    margin-bottom:30px;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:14px 35px;
-    background:#f4b400;
-    color:white;
-    text-decoration:none;
+    background:#ffb400;
+    color:#fff;
+    padding:15px 35px;
     border-radius:8px;
-    font-weight:600;
+    text-decoration:none;
+    font-weight:bold;
     transition:0.3s;
 }
 
 .btn:hover{
-    background:#d89c00;
+    background:#e09e00;
 }
 
-/* SECCIONES */
-section{
-    padding:100px 80px;
+/* ===== SERVICIOS ===== */
+.services{
+    padding:100px 10%;
+    background:#f4f6f9;
+    text-align:center;
 }
 
 .section-title{
-    text-align:center;
-    font-size:34px;
+    font-size:2.5rem;
     margin-bottom:60px;
-    font-weight:700;
-    color:#0b1c2d;
-}
-
-/* PERFIL */
-.profile{
-    display:flex;
-    gap:60px;
-    align-items:center;
-}
-
-.profile img{
-    width:380px;
-    border-radius:12px;
-    box-shadow:0 15px 30px rgba(0,0,0,0.2);
-}
-
-.profile-text p{
-    margin-bottom:20px;
-    line-height:1.7;
-}
-
-/* SERVICIOS */
-.services{
-    background:#f5f7fa;
+    color:#0f1c2e;
 }
 
 .service-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
 }
 
 .service-card{
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    transition:0.3s;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.4s;
 }
 
 .service-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.service-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
 }
 
 .service-card h3{
-    margin-bottom:15px;
-    color:#0b1c2d;
+    margin:20px 0 10px;
 }
 
-/* CTA */
-.cta{
-    background:#0b1c2d;
-    color:white;
-    text-align:center;
-    padding:80px 20px;
+.service-card p{
+    padding:0 20px 25px;
+    font-size:0.95rem;
+    color:#555;
 }
 
+/* Animación scroll */
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ===== SOBRE EL INGENIERO ===== */
+.about{
+    padding:100px 10%;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:50px;
+}
+
+.about img{
+    width:350px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:0.4s;
+}
+
+.about img:hover{
+    transform:scale(1.03);
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    font-size:2.2rem;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    line-height:1.7;
+    color:#555;
+}
+
+/* ===== FOOTER ===== */
 footer{
-    background:#091520;
-    color:#ccc;
+    background:#0f1c2e;
+    color:#fff;
     text-align:center;
-    padding:25px;
+    padding:30px;
+    margin-top:60px;
 }
 
-/* WHATSAPP */
-.whatsapp{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    background:#25d366;
-    color:white;
-    padding:15px 18px;
-    border-radius:50%;
-    font-size:22px;
-    text-decoration:none;
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-    nav, header, section{
-        padding:20px;
-    }
-
-    .profile{
-        flex-direction:column;
-    }
-
-    .hero h1{
-        font-size:40px;
-    }
-}
 </style>
 </head>
-
 <body>
 
-<nav id="navbar">
-    <div class="logo">Ingeniería Civil & Proyectos</div>
+<!-- NAVBAR -->
+<nav>
+    <h1>Empresa de Ingeniería & Proyectos Civiles</h1>
     <ul>
-        <li><a href="#perfil">Perfil Profesional</a></li>
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#about">Ingeniero</a></li>
+        <li><a href="https://wa.me/51925155313" target="_blank">Contacto</a></li>
     </ul>
 </nav>
 
-<header>
-    <div class="hero">
-        <h1>Ing. Brayan Salazar Flores</h1>
-        <p>Soluciones integrales en diseño, ejecución y supervisión de proyectos de infraestructura.</p>
-        <a class="btn" href="https://wa.me/51925155313?text=Hola%20Ingeniero,%20deseo%20solicitar%20una%20cotización." target="_blank">
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>Ing. Brayan Salazar Flores</h2>
+        <p>Ingeniero Civil especializado en diseño, supervisión y gestión de proyectos.</p>
+        <a href="https://wa.me/51925155313" target="_blank" class="btn">
             Solicitar Cotización
         </a>
     </div>
-</header>
+</section>
 
-<section id="perfil">
-    <h2 class="section-title">Ing. Brayan Salazar Flores</h2>
-    <div class="profile">
-        <img src="https://raw.githubusercontent.com/bsalazarflores5-creator/Ing-Brayan-Salazar-Flores/main/ing_salazar.jpeg" alt="Ing. Brayan Salazar Flores">
-        <div class="profile-text">
-            <p>Ingeniero Civil con experiencia en diseño estructural, hidráulico e infraestructura vial, especializado en la planificación, supervisión y ejecución de proyectos civiles bajo estándares técnicos y normativos vigentes.</p>
+<!-- SERVICIOS -->
+<section id="servicios" class="services">
+    <h2 class="section-title">Servicios Profesionales</h2>
 
-            <p>Amplio dominio en elaboración de expedientes técnicos, metrados, presupuestos, control de calidad y gestión de obra. Experiencia en implementación de Seguridad y Salud en el Trabajo (SST), IPERC, control de riesgos y supervisión preventiva en obras civiles.</p>
+    <div class="service-grid">
 
-            <p>Enfoque profesional orientado a eficiencia técnica, optimización de recursos y cumplimiento de estándares de seguridad y calidad en cada proyecto.</p>
+        <div class="service-card hidden">
+            <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6e0?auto=format&fit=crop&w=900&q=80">
+            <h3>Diseño Estructural</h3>
+            <p>Modelamiento y cálculo estructural conforme a normativa vigente.</p>
         </div>
+
+        <div class="service-card hidden">
+            <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=900&q=80">
+            <h3>Diseño Hidráulico</h3>
+            <p>Sistemas hidráulicos, drenajes y conducción de agua.</p>
+        </div>
+
+        <div class="service-card hidden">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80">
+            <h3>Infraestructura Vial</h3>
+            <p>Planificación y ejecución de proyectos viales.</p>
+        </div>
+
+        <div class="service-card hidden">
+            <img src="https://images.unsplash.com/photo-1581091012184-7c2e9f8c8f1e?auto=format&fit=crop&w=900&q=80">
+            <h3>Expedientes Técnicos</h3>
+            <p>Desarrollo integral de documentación técnica.</p>
+        </div>
+
+        <div class="service-card hidden">
+            <img src="https://images.unsplash.com/photo-1581093588401-12bdf5b6f2f1?auto=format&fit=crop&w=900&q=80">
+            <h3>Supervisión de Obras</h3>
+            <p>Control técnico y cumplimiento normativo.</p>
+        </div>
+
+        <div class="service-card hidden">
+            <img src="https://images.unsplash.com/photo-1581091870627-3b5de29f3c9e?auto=format&fit=crop&w=900&q=80">
+            <h3>Seguridad y Salud en el Trabajo</h3>
+            <p>Implementación de planes SST, IPERC y prevención de riesgos laborales.</p>
+        </div>
+
     </div>
 </section>
 
-<section id="servicios" class="servicios">
-    <div class="container">
-        <h2 class="titulo-seccion">Servicios Profesionales</h2>
+<!-- SOBRE EL INGENIERO -->
+<section id="about" class="about">
 
-        <div class="grid-servicios">
+    <img src="https://raw.githubusercontent.com/bsalazarflores5-creator/Ing-Brayan-Salazar-Flores/main/ing_salazar.jpeg" alt="Ing. Brayan Salazar Flores">
 
-            <!-- DISEÑO ESTRUCTURAL -->
-            <div class="card-servicio">
-                <div class="img-servicio">
-                    <img src="imagenes/diseno_estructural.png" alt="Diseño estructural">
-                </div>
-                <h3>Diseño Estructural</h3>
-                <p>Modelamiento y cálculo estructural conforme a normativa vigente y estándares técnicos.</p>
-            </div>
-
-            <!-- DISEÑO HIDRÁULICO -->
-            <div class="card-servicio">
-                <div class="img-servicio">
-                    <img src="imagenes/diseno_hidraulico.png" alt="Diseño hidráulico">
-                </div>
-                <h3>Diseño Hidráulico</h3>
-                <p>Sistemas hidráulicos, drenajes, diseño y ejecución de canales y obras de conducción.</p>
-            </div>
-
-            <!-- INFRAESTRUCTURA VIAL -->
-            <div class="card-servicio">
-                <div class="img-servicio">
-                    <img src="imagenes/infraestructura_vial.png" alt="Infraestructura vial">
-                </div>
-                <h3>Infraestructura Vial</h3>
-                <p>Planificación, pavimentación y supervisión técnica de proyectos viales.</p>
-            </div>
-
-            <!-- EXPEDIENTES TÉCNICOS -->
-            <div class="card-servicio">
-                <div class="img-servicio">
-                    <img src="imagenes/expedientes_tecnicos.png" alt="Expedientes técnicos">
-                </div>
-                <h3>Expedientes Técnicos</h3>
-                <p>Desarrollo integral de documentación técnica, metrados y presupuestos.</p>
-            </div>
-
-            <!-- SUPERVISIÓN DE OBRAS -->
-            <div class="card-servicio">
-                <div class="img-servicio">
-                    <img src="imagenes/supervision_obras.png" alt="Supervisión de obras">
-                </div>
-                <h3>Supervisión de Obras</h3>
-                <p>Control técnico, calidad constructiva y cumplimiento normativo en campo.</p>
-            </div>
-
-            <!-- SEGURIDAD Y SALUD -->
-            <div class="card-servicio">
-                <div class="img-servicio">
-                    <img src="imagenes/seguridad_salud.png" alt="Seguridad y Salud en el Trabajo">
-                </div>
-                <h3>Seguridad y Salud en el Trabajo</h3>
-                <p>Planes SST, IPERC, prevención de riesgos laborales y supervisión en obra.</p>
-            </div>
-
-        </div>
+    <div class="about-text">
+        <h2>Ing. Brayan Salazar Flores</h2>
+        <p>
+        Ingeniero Civil con sólida experiencia en diseño estructural, hidráulico,
+        infraestructura vial y elaboración de expedientes técnicos. Especialista en
+        supervisión de obras y gestión de proyectos bajo estándares técnicos y
+        normativos. Con conocimientos en Seguridad y Salud en el Trabajo,
+        implementación de IPERC, control de calidad y prevención de riesgos.
+        Comprometido con la eficiencia, responsabilidad y excelencia profesional.
+        </p>
     </div>
-</section>
-
-<section class="cta" id="contacto">
-    <h2>Solicita asesoría profesional especializada</h2>
-    <a class="btn" href="https://wa.me/51925155313?text=Hola%20Ingeniero,%20me%20interesa%20recibir%20información%20sobre%20sus%20servicios." target="_blank">
-        Contactar por WhatsApp
-    </a>
 </section>
 
 <footer>
-    © 2026 Ing. Brayan Salazar Flores | Ingeniería Civil & Proyectos
+    © 2026 Ing. Brayan Salazar Flores - Todos los derechos reservados
 </footer>
 
-<a class="whatsapp" href="https://wa.me/51925155313" target="_blank">💬</a>
-
 <script>
-window.addEventListener("scroll", function(){
-    var navbar = document.getElementById("navbar");
-    navbar.classList.toggle("scrolled", window.scrollY > 50);
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+},{threshold:0.2});
+
+document.querySelectorAll('.hidden').forEach(el=>{
+    observer.observe(el);
 });
 </script>
 
 </body>
 </html>
-
-
