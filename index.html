@@ -3,165 +3,363 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ing. Brayan Salazar Flores</title>
+<title>Ing. Brayan Salazar Flores | Ingeniería Civil</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color:white;
+    font-family:'Poppins', sans-serif;
+    color:#333;
 }
 
-/* ====== HEADER SUPERIOR ====== */
-
-.topbar{
-    background:#0d1b2a;
-    padding:8px 5%;
-    display:flex;
-    justify-content:space-between;
-    font-size:14px;
-}
-
-.navbar{
-    background:#0a192f;
-    padding:18px 5%;
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:20px 80px;
+    z-index:1000;
+    transition:0.4s;
+}
+
+nav.scrolled{
+    background:#0b1c2d;
+    padding:15px 80px;
 }
 
 .logo{
-    font-size:24px;
-    font-weight:bold;
+    color:#fff;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:1px;
 }
 
-.menu{
+nav ul{
+    list-style:none;
     display:flex;
-    gap:30px;
-    align-items:center;
+    gap:35px;
 }
 
-.menu a{
-    color:white;
+nav ul li a{
     text-decoration:none;
+    color:white;
     font-weight:500;
     transition:0.3s;
 }
 
-.menu a:hover{
-    color:#fca311;
+nav ul li a:hover{
+    color:#f4b400;
 }
 
-/* Botón whatsapp */
-.whatsapp-btn{
-    background:#25D366;
-    padding:8px 12px;
-    border-radius:6px;
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-}
-
-/* ====== HERO SECTION ====== */
-
-.hero{
-    height:100vh;
-    background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-        url('https://raw.githubusercontent.com/bsalazarflores5-creator/Ing-Brayan-Salazar-Flores/main/foto_fondo.png');
+/* HERO */
+header{
+    background: linear-gradient(rgba(0,20,40,0.75), rgba(0,20,40,0.85)),
+    url('https://raw.githubusercontent.com/bsalazarflores5-creator/Ing-Brayan-Salazar-Flores/main/foto_fondo.png');
     background-size:cover;
     background-position:center;
-    background-repeat:no-repeat;
+    height:100vh;
     display:flex;
     align-items:center;
-    padding:0 8%;
-}
-
-.hero-content{
-    max-width:650px;
-}
-
-.hero h1{
-    font-size:60px;
-    line-height:1.1;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:20px;
-    margin-bottom:30px;
-    color:#e0e0e0;
-}
-
-.cta-btn{
-    background:#fca311;
+    padding:0 80px;
     color:white;
-    padding:15px 30px;
-    font-size:18px;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    text-decoration:none;
+}
+
+.hero-content small{
+    letter-spacing:2px;
+    opacity:0.8;
+}
+
+.hero-content h1{
+    font-family:'Playfair Display', serif;
+    font-size:60px;
+    margin:20px 0;
+    position:relative;
+}
+
+.hero-content h1::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:#f4b400;
+    position:absolute;
+    bottom:-10px;
+    left:0;
+}
+
+.btn{
     display:inline-block;
+    margin-top:30px;
+    padding:14px 35px;
+    background:#f4b400;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    border-radius:8px;
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.btn:hover{
+    background:#d89c00;
+    transform:translateY(-3px);
+}
+
+/* SECCIONES */
+section{
+    padding:100px 80px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:60px;
+    font-weight:700;
+    color:#0b1c2d;
+}
+
+/* EMPRESA */
+.about{
+    display:flex;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:450px;
+    border-radius:10px;
+    box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+.about-text p{
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+/* SERVICIOS */
+.services{
+    background:#f5f7fa;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
     transition:0.3s;
 }
 
-.cta-btn:hover{
-    background:#ffb703;
+.service-card:hover{
+    transform:translateY(-10px);
 }
 
-/* ====== RESPONSIVE ====== */
+.service-card h3{
+    margin-bottom:15px;
+    color:#0b1c2d;
+}
 
-@media(max-width:768px){
-    .hero h1{
+/* PROYECTOS */
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    height:250px;
+    background:#ccc;
+    border-radius:10px;
+    overflow:hidden;
+    position:relative;
+}
+
+.project-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.project-card span{
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    background:rgba(0,0,0,0.7);
+    color:white;
+    padding:8px 15px;
+    border-radius:5px;
+}
+
+/* CTA */
+.cta{
+    background:#0b1c2d;
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.cta h2{
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+footer{
+    background:#091520;
+    color:#ccc;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#25d366;
+    color:white;
+    padding:15px 18px;
+    border-radius:50%;
+    font-size:22px;
+    text-decoration:none;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    nav{
+        padding:20px;
+    }
+
+    header{
+        padding:0 20px;
+    }
+
+    section{
+        padding:80px 20px;
+    }
+
+    .about{
+        flex-direction:column;
+    }
+
+    .about img{
+        width:100%;
+    }
+
+    .hero-content h1{
         font-size:40px;
     }
-    .menu{
-        display:none;
-    }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ===== TOP BAR ===== -->
-<div class="topbar">
-    <div>Empresa de Ingeniería & Proyectos Civiles</div>
-    <div>+51 925155313 | bsalazarflores5@gmail.com</div>
-</div>
+<nav id="navbar">
+    <div class="logo">Empresa de Ingeniería & Proyectos Civiles</div>
+    <ul>
+        <li><a href="#empresa">Empresa</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
 
-<!-- ===== NAVBAR ===== -->
-<div class="navbar">
-    <div class="logo">Ing. Brayan Salazar Flores</div>
-    
-    <div class="menu">
-        <a href="#">Empresa</a>
-        <a href="#">Servicios</a>
-        <a href="#">Proyectos</a>
-        <a href="#">Contacto</a>
-        <a class="whatsapp-btn" href="https://wa.me/51925155313" target="_blank">WhatsApp</a>
-    </div>
-</div>
-
-<!-- ===== HERO SECTION ===== -->
-<section class="hero">
+<header>
     <div class="hero-content">
-        <h1>Ingeniería & Construcción de Alto Nivel</h1>
-        <p>
-            Soluciones integrales en infraestructura vial, diseño hidráulico,
-            ejecución de canales, obras civiles y gestión de seguridad y salud en el trabajo,
-            con estándares técnicos y operacionales de alto rendimiento.
-        </p>
-        <a href="#" class="cta-btn">Solicitar Cotización</a>
+        <small>Soluciones Técnicas Profesionales</small>
+        <h1>Ing. Brayan Salazar Flores</h1>
+        <a class="btn" href="https://wa.me/51925155313" target="_blank">
+            Solicitar Cotización
+        </a>
+    </div>
+</header>
+
+<section id="empresa">
+    <h2 class="section-title">Nuestra Empresa</h2>
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="">
+        <div class="about-text">
+            <p>Somos una empresa especializada en proyectos de ingeniería civil, supervisión, ejecución de obras y consultoría técnica.</p>
+            <p>Brindamos soluciones eficientes, seguras y alineadas a normativas vigentes, garantizando calidad y cumplimiento en cada proyecto.</p>
+        </div>
     </div>
 </section>
+
+<section id="servicios" class="services">
+    <h2 class="section-title">Servicios</h2>
+    <div class="service-grid">
+        <div class="service-card">
+            <h3>Diseño Estructural</h3>
+            <p>Cálculo y modelamiento estructural bajo normativa vigente.</p>
+        </div>
+        <div class="service-card">
+            <h3>Supervisión de Obras</h3>
+            <p>Control técnico y seguimiento de proyectos civiles.</p>
+        </div>
+        <div class="service-card">
+            <h3>Expedientes Técnicos</h3>
+            <p>Elaboración integral de documentación técnica.</p>
+        </div>
+        <div class="service-card">
+            <h3>Consultoría</h3>
+            <p>Asesoría especializada en proyectos de infraestructura.</p>
+        </div>
+    </div>
+</section>
+
+<section id="proyectos">
+    <h2 class="section-title">Proyectos</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b" alt="">
+            <span>Edificación Residencial</span>
+        </div>
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" alt="">
+            <span>Infraestructura Urbana</span>
+        </div>
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" alt="">
+            <span>Supervisión Técnica</span>
+        </div>
+    </div>
+</section>
+
+<section class="cta" id="contacto">
+    <h2>¿Necesitas asesoría profesional?</h2>
+    <a class="btn" href="https://wa.me/51925155313" target="_blank">
+        Contáctanos por WhatsApp
+    </a>
+</section>
+
+<footer>
+    © 2026 Ing. Brayan Salazar Flores | Todos los derechos reservados
+</footer>
+
+<a class="whatsapp" href="https://wa.me/51925155313" target="_blank">💬</a>
+
+<script>
+window.addEventListener("scroll", function(){
+    var navbar = document.getElementById("navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
 
 </body>
 </html>
